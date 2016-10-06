@@ -29,25 +29,34 @@ object WordCount {
     // set up the execution environment
     val env = ExecutionEnvironment.getExecutionEnvironment
 
-    // get input data
-    //val text = env.fromElements("To be, or not to be,--that is the question:--",      "Whether 'tis nobler in the mind to suffer", "The slings and arrows of outrageous fortune","Or to take arms against a sea of troubles,")
 
+    // Read using textFile
     val text = env.readTextFile("file:///home/arp/GitHub/Flink/flink-scala-project/target/classes/DataSources/data.txt")
     val text2 = env.readTextFileWithValue("file:///home/arp/GitHub/Flink/flink-scala-project/target/classes/DataSources/data.txt")
-
     val counts = text.flatMap { _.toLowerCase.split("\\W+") }
       .map { (_, 1) }
       .groupBy(0)
       .sum(1)
+    //counts.print()
 
-
-    val counts2 = text2.flatMap { _.split("\\W+") }
+    //Read 3 (all) fields of CSV
+    val text3 = env.readCsvFile[(String,String, String)]("file:///home/arp/GitHub/Flink/flink-scala-project/target/classes/DataSources/data.csv")
+    val counts3 = text3.map(x=>x._1)  //Process only first column
       .map { (_, 1) }
       .groupBy(0)
       .sum(1)
+    //counts3.print()
 
-    // execute and print result
-    counts.print()
+    //Read selectd columns of CSV
+    val text4 = env.readCsvFile [(String,String)]("file:///home/arp/GitHub/Flink/flink-scala-project/target/classes/DataSources/data.csv"
+      ,fieldDelimiter = ","
+      ,includedFields = Array(0,1))
+    val counts4 = text3  //Process only first column
+      .map { (_, 1) }
+      .groupBy(0)
+      .sum(1)
+    counts4.print()
+
     println(PATH)
    }
 }
