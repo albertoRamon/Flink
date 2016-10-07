@@ -57,6 +57,13 @@ object WordCount {
       .sum(1)
     counts4.print()
 
+    val text5 = env.generateSequence(1,10)
+    val counts5 =text5
+      .map { (_, 1) }
+      .groupBy(0)
+      .sum(1)
+    counts5.print()
+
     println(PATH)
    }
 }
