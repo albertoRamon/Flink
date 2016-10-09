@@ -8,6 +8,7 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-shaded-hadoop2/1.1.2/flink-shaded-hadoop2-1.1.2-sources.jar!/" />
+      <root url="file://$USER_HOME$/Descargas/apache-kylin-1.5.2-bin/lib" />
     </SOURCES>
   </library>
 </component>

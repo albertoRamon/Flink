@@ -19,6 +19,10 @@ package DataSources
  */
 
 import org.apache.flink.api.scala._
+import org.apache.flink.api.java.io.jdbc.JDBCInputFormat
+import org.apache.flink.api.table.Row
+import org.apache.flink.api.table.typeutils.RowTypeInfo
+import org.apache.flink.api.common.typeinfo.{BasicTypeInfo, TypeInformation}
 
 
 object WordCount {
@@ -48,21 +52,28 @@ object WordCount {
     //counts3.print()
 
     //Read selectd columns of CSV
-    val text4 = env.readCsvFile [(String,String)]("file:///home/arp/GitHub/Flink/flink-scala-project/target/classes/DataSources/data.csv"
+    val text4 = env.readCsvFile [Tuple1[String]]("file:///home/arp/GitHub/Flink/flink-scala-project/target/classes/DataSources/data.csv"
       ,fieldDelimiter = ","
-      ,includedFields = Array(0,1))
-    val counts4 = text3  //Process only first column
+      ,includedFields = Array(0))
+    val counts4 = text3
       .map { (_, 1) }
       .groupBy(0)
       .sum(1)
-    counts4.print()
+    //counts4.print()
+    var stringColum: TypeInformation[String] = createTypeInformation[String]
+    val DB_ROWTYPE = new RowTypeInfo(Seq(stringColum))
 
-    val text5 = env.generateSequence(1,10)
-    val counts5 =text5
-      .map { (_, 1) }
-      .groupBy(0)
-      .sum(1)
-    counts5.print()
+    val inputFormat = JDBCInputFormat.buildJDBCInputFormat()
+      .setDrivername("org.apache.kylin.jdbc.Driver")
+      .setDBUrl("jdbc:kylin://172.17.0.2:7070/learn_kylin")
+      .setUsername("ADMIN")
+      .setPassword("KYLIN")
+      .setQuery("select sum(price) as total_selled from kylin_sales group by part_dt order by part_dt")
+      .setRowTypeInfo(DB_ROWTYPE)
+      .finish()
+
+      val dataset =env.createInput(inputFormat)
+    dataset.print()
 
     println(PATH)
    }
