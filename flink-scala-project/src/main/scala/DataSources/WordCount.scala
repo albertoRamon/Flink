@@ -60,7 +60,7 @@ object WordCount {
       .groupBy(0)
       .sum(1)
     //counts4.print()
-    var stringColum: TypeInformation[String] = createTypeInformation[String]
+    var stringColum: TypeInformation[Int] = createTypeInformation[Int]
     val DB_ROWTYPE = new RowTypeInfo(Seq(stringColum))
 
     val inputFormat = JDBCInputFormat.buildJDBCInputFormat()
@@ -68,7 +68,7 @@ object WordCount {
       .setDBUrl("jdbc:kylin://172.17.0.2:7070/learn_kylin")
       .setUsername("ADMIN")
       .setPassword("KYLIN")
-      .setQuery("select sum(price) as total_selled from kylin_sales group by part_dt order by part_dt")
+      .setQuery("select count(distinct seller_id) as sellers from kylin_sales group by part_dt order by part_dt")
       .setRowTypeInfo(DB_ROWTYPE)
       .finish()
 
