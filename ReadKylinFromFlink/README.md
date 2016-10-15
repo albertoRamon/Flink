@@ -207,7 +207,7 @@ The out must be similar to this, print the result of query by standard output:
 </p>
 
 &nbsp;
-## Now more complex
+## Now, more complex . . . 
 We can try with multi-colum and multi-type query:
 
 ```
@@ -224,12 +224,17 @@ We will need changes in DB_ROWTYPE:
 
 And import lib of Java, to work with Data type of Java  ![alt text](./Images/21.png)
 
-The new Result will be: ![alt text](./Images/22.png)
+The new Result will be:  ![alt text](./Images/22.png)
+<p align="center">
+  <img src=./Images/23.png />
+</p>
+
+
 
 &nbsp;
 ## Error:  Reused Connection
 <p align="center">
-  <img src=./Images/23.png />
+  <img src=./Images/24.png />
 </p>
 Check if your HBase and Kylin is working
 Also you can use Kylin UI for it
