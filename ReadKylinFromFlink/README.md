@@ -242,11 +242,13 @@ Also you can use Kylin UI for it
 &nbsp;
 ## Final Words
 **Now we can read Kylin’s data from Apache Flink, great News ¡¡**
+
 [Full Code Example](../flink-scala-project)
 
 We solved all integration problems, and tested with different types of data (Long, BigDecimal and Dates)
 
 Today  (12 Oct 2016) Flink 1.2-SnapShot, you need download, apply path, compile and make install …. but in new releases will not necessary
+
 **Updated** The patch has been comited at 15 Oct, then, Will be part of Flink 1.2
 
 &nbsp;

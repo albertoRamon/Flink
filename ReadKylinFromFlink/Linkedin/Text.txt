@@ -1,11 +1,14 @@
-Now you can read Kylin Cubes from Apache Flink using Scala
+
+Read Kylin Cube from Flink with Scala
+
 https://github.com/albertoRamon/Flink/tree/master/ReadKylinFromFlink
 
 
-* Apache Kylin:  is a OLAP (Cubes) over Hadoop using SQL
-* Flink: It's realtime Data Processing
+Manual : Now, you can read Kylin Cubes from Flink using Scala
 
-For any suggestions, feel free to contact me
-Thanks, Alberto
+Apache Kylin: is a OLAP (Cubes) over Hadoop using SQL
+Apache Flink: It's realtime Data Processing (You will need v1.2, now in development)
 
-Read Cube Kylin from Flink with Scala
+
+An example of Kylin Output:
+
