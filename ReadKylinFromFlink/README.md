@@ -2,6 +2,7 @@
 &nbsp;
 
 **Date:** October 2016
+**UpDate:** November 2016
 
 **Author:** Ramón Portolés, Alberto  ![alt text](./Images/00.png)  [Linkedin](https://www.linkedin.com/in/alberto-ramon-portoles-a02b523b "My Linkedin") 
 
@@ -34,6 +35,8 @@ Then , We will go step by step solving problems
 ### Used Software:
 * [Apache Flink](http://flink.apache.org/downloads.html) v1.2-SNAPSHOT
 * [Apache Kylin](http://kylin.apache.org/download/) v1.5.2
+
+  (In Nov 2016, only works with 1.5.4 or more by dependences with Calcite, I Tested with v1.6.0)
 * [IntelliJ](https://www.jetbrains.com/idea/download/#section=linux)  v2016.2
 * [Scala](downloads.lightbend.com/scala/2.11.8/scala-2.11.8.tgz)  v2.11
 
@@ -238,6 +241,23 @@ The new Result will be:  ![alt text](./Images/22.png)
 </p>
 Check if your HBase and Kylin is working
 Also you can use Kylin UI for it
+
+
+&nbsp;
+## Error:  java.lang.AbstractMethodError:  ….Avatica Connection
+See [Kylin 1898](https://issues.apache.org/jira/browse/KYLIN-1898) 
+
+It is a problem with kylin-jdbc-1.x.x. JAR, you need use Calcite 1.8 or more → use Kylin 1.5.4 or more
+<p align="center">
+  <img src=./Images/25.png />
+</p>
+
+
+&nbsp;
+## Error: can't expand macros compiled by previous versions of scala
+Is a problem with versions of scala, check in with  scala -version  your actual version and choose your correct POM
+Perhaps you will need a IntelliJ > File > Invalidates Cache > Invalidate and Restart
+
 
 &nbsp;
 ## Final Words
