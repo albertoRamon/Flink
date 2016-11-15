@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="kylin-jdbc-1.6.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/apache-kylin-1.6.0-SNAPSHOT-bin/lib/kylin-jdbc-1.6.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
