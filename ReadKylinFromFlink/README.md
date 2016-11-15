@@ -2,6 +2,7 @@
 &nbsp;
 
 **Date:** October 2016
+
 **UpDate:** November 2016
 
 **Author:** Ramón Portolés, Alberto  ![alt text](./Images/00.png)  [Linkedin](https://www.linkedin.com/in/alberto-ramon-portoles-a02b523b "My Linkedin") 
@@ -256,7 +257,10 @@ It is a problem with kylin-jdbc-1.x.x. JAR, you need use Calcite 1.8 or more →
 &nbsp;
 ## Error: can't expand macros compiled by previous versions of scala
 Is a problem with versions of scala, check in with  scala -version  your actual version and choose your correct POM
+
 Perhaps you will need a IntelliJ > File > Invalidates Cache > Invalidate and Restart
+
+I Aded POM for Scala 2.11
 
 
 &nbsp;
