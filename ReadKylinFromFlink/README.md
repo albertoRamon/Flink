@@ -1,3 +1,5 @@
+# !! Moved to [Official Doc](http://kylin.apache.org/docs16/) /  [Connect from Apache Flink](http://kylin.apache.org/docs16/tutorial/flink.html) !!
+
 # How to Read Apache Kylin from Apache Flink using Scala 
 &nbsp;
 
