@@ -55,14 +55,15 @@ object WordCount {
     val text4 = env.readCsvFile [Tuple1[String]]("file:///home/arp/GitHub/Flink/flink-scala-project/target/classes/DataSources/data.csv"
       ,fieldDelimiter = ","
       ,includedFields = Array(2))
-    val counts4 = text3
+    val counts4 = text4
       .map { (_, 1) }
       .groupBy(0)
       .sum(1)
-    counts4.print()
+    //counts4.print()
 
     // Read data from JDBC (Kylin in our case)
-    var stringColum: TypeInformation[Int] = createTypeInformation[Int]
+    var stringColum: TypeInformation[Long] = createTypeInformation[Long]
+    var dateColum: TypeInformation[Date] = createTypeInformation[Date]
     val DB_ROWTYPE = new RowTypeInfo(Seq(stringColum))
 
     val inputFormat = JDBCInputFormat.buildJDBCInputFormat()
