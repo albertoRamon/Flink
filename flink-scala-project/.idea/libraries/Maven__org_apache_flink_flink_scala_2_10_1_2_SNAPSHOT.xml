@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.flink:flink-scala_2.10:1.2-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-scala_2.10/1.2-SNAPSHOT/flink-scala_2.10-1.2-20161220.034112-130.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-scala_2.10/1.2-SNAPSHOT/flink-scala_2.10-1.2-20161220.034112-130-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-scala_2.10/1.2-SNAPSHOT/flink-scala_2.10-1.2-20161220.034112-130-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
